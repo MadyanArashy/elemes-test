@@ -28,18 +28,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}
       >
         <Providers>
-          <main>
-            <ThemeSwitch/>
-            {children}</main>
+          <main className="flex flex-col min-h-screen align-top">
+            {children}
+          </main>
         </Providers>
       </body>
     </html>
